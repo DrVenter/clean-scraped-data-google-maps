@@ -93,9 +93,9 @@ class clean_data:
         self.data_frame = pd.DataFrame(self.matrix)
     
     def save_data_frame_as_csv(self):
-        self.data_frame.to_csv(f"cleaned_{self.file_name}.csv", index=False)
+        self.data_frame.to_csv(f"cleaned_{self.file_name}.csv", index=False, header=False)
 
-data_base = clean_data("tattoo_sample.txt")
+data_base = clean_data("tattoo_studios.txt")
 data_base.remove_empty_headings()
 data_base.filter_keywords = {"tattoo" , "ink"}
 data_base.remove_undesirable_rows_by_filter()
